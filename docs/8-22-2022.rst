@@ -1,0 +1,133 @@
+Aug 22, 2022
+==============
+
+Introduction to LaTeX   
+---------------------
+
+Resources/References:
+
+- Overleaf file_ used in the lecture
+- `The Not So Short Introduction to LATEX <https://tobi.oetiker.ch/lshort/lshort.pdf>`_
+- `OverLeaf Mathematical Expressions <https://www.overleaf.com/learn/latex/Mathematical_expressions>`_
+
+.. _file: https://www.overleaf.com/read/pnjfsjgwjnyv
+
+Paragraphs in LaTeX
+-------------------
+
+* To start a new paragraph at least one vertical line spacing is necessary.
+
+.. code-block:: latex
+   :linenos:
+
+   random words.
+
+   New paragraph
+
+
+* Use ''%'' to comment out your code.
+
+.. code-block:: latex
+   :linenos:
+
+   To comment out, use % symbol. 
+
+   Example. This will be seen when complied % but this won't be
+
+* Single line spacing does *not* start a new paragraph.
+
+.. code-block:: latex
+   :linenos:
+
+   student1
+   student2
+   student3
+   student4
+   student5
+
+produces 
+
+ .. code-block:: text
+
+   student1 student2 student3 student4 student5 
+   
+There are two ways to make a new line. 
+
+* We put the new line command  ''\\\\''.
+
+.. code-block:: latex
+   :linenos:
+
+   student1\\
+   student2\\
+   student3\\
+   student4\\
+   student5 % One does not need a new line here. 
+
+* We use the *itemize* environment.
+
+.. code-block:: latex
+   :linenos:
+
+   \begin{itemize} % or enumerate
+   \item student1
+   \item student2   
+   \item student3
+   \item student4
+   \item student5
+   \end{itemize}
+
+It produces something similar to 
+
+* student1
+* student2   
+* student3
+* student4
+* student5
+
+.. note::
+
+   Unlike programming languages such as Python and YAML, in LaTeX code indentation does not do anything. It is mostly for the reader's convenience.  
+
+
+Math in LaTeX
+-------------
+
+In LaTeX, we need to specify math mode by using one of the following keywords.
+
+1. Inline mode
+   
+.. code-block:: latex
+   :linenos:
+
+   \( <math expressions> \)
+   \$ <math expressions> \$ 
+
+Mathematical expressions created in inline mode are considered as part of regular text. For instance, the quadratic formula in inline mode produces :math:`\frac{-b \pm \sqrt{b^2-4ac}}{2a}`.
+
+2. Math mode
+
+.. code-block:: latex
+   :linenos:
+
+   \[ <math expressions> \]
+   $$ <math expressions> $$
+   \begin{equation} <math expressions> \end{equation} # this provides a numbered environment.
+   \begin{equation*} <math expressions> \end{equation*}
+
+LaTeX math mode produces math such that it is not considered to be part of regular text but mathematical expressions themselves. 
+It creates vertical space and most of the time, mathematical expressions are center aligned. 
+For example, the quadratic formula in inline mode produces 
+
+.. math::
+
+   \frac{-b \pm \sqrt{b^2-4ac}}{2a}.
+
+.. note::
+
+   In general, when typing math in LaTeX keep in mind that different fonts mean different symbols. That is the following four are different characters
+
+   .. math::
+
+      \text{p}, p, \mathfrak{p}, \mathbf{p}
+

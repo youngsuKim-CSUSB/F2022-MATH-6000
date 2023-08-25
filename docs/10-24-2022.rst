@@ -1,0 +1,16 @@
+===============
+Oct 24th, 2022
+===============
+
+Review
+------
+
+* ``array`` environment: align, hline, left & right
+* ``theorem`` environment: named theorem
+* ``bibliography``
+* ``includegraphics``
+
+Announcements
+-------------
+
+* Detailed outline for your paper

@@ -1,0 +1,138 @@
+===============
+Nov 14th, 2022
+===============
+
+Do to 
+------
+
+* Brief introduction to beamer class, https://www.overleaf.com/learn/latex/Beamer
+* More thorough treatments starts here, https://www.overleaf.com/learn/latex/Beamer_Presentations%3A_A_Tutorial_for_Beginners_(Part_1)%E2%80%94Getting_Started
+* Beamer ``pause, overlay``, 
+  
+.. .. note:: 
+
+..     I apologize for the missing images below. Please use https://www.overleaf.com/read/pnjfsjgwjnyv (under the beamer example folder) for the reference of images. 
+
+Beamer Overlay
+----------------
+
+These notes are based on https://www.overleaf.com/learn/latex/Beamer_Presentations%3A_A_Tutorial_for_Beginners_(Part_4)%E2%80%94Getting_Started. 
+
+Recall that the page unit in the Beamer class is a frame. 
+Sometimes, we want to present information dynamically, meaning display part of the frame before displaying the whole frame. 
+There are a few ways to do this with the Beamer class. 
+They are often called ``overlay`` and Overleaf provides a good explanation. 
+Below is the list of commands for overlay.
+
+**Overlay**
+  * ``\pause``
+  * ``\item<n>``
+  * ``\overlay``
+  * ``\only``
+
+.. note:: 
+
+    When using this commands, the outcome file becomes big quickly. 
+    When you want framewise outcomes, use the option ``handout`` instead of deleting or commenting out overlay commands. E.g., 
+
+    ``\documentclass[handouts]{beamer}``
+
+pause
+~~~~~~~~~~~
+
+The ``\pause`` commands simply pauses where it is placed and continues. The following code will produce the following outcomes
+
+.. code-block:: latex
+  :caption: Beamer pause example
+
+  \begin{frame}{pause example}
+  First slide 
+  \pause
+  Next slide
+  \end{frame}
+
+You may place ``\pause`` as many time as you like.
+
+item<n->
+~~~~~~~~~~~
+
+Unlike the ``article`` or ``amsart`` classes, the ``itemize`` and ``enumerate`` commands in the ``beamer`` class have additional features for overlay. Here are some of the ways to use them.
+
+.. code-block:: latex
+  :caption: Beamer item<n-> example
+
+  \begin{frame}{itemize example}
+  \begin{itemize}
+    \item<1> something      % shows this item only on slide 1
+    \item<2> something      % shows this item only on slide 2
+    \item<1-2> something    % shows this item only on slides 1,2
+    \item<1-3> something    % shows this item only on slides 1,2,3
+    \item<2-> something     % shows this item from on slide 2 to the last one.
+    \item<1,3-> something   % shows this item only on slide 1 and slide 3 to the last one.
+  \end{itemize}
+  \end{frame}
+
+overlay
+~~~~~~~
+
+The ``overlay`` command works the same as itemize. 
+The only difference is that one does not need to use ``itemize`` or ``enuemrate`` but needs to include them in the parenthesis.
+
+.. code-block:: latex
+  :caption: Beamer overlay example
+
+  \begin{frame}{itemize example}
+  \overlay<1>{something}      % shows this item only on slide 1
+  \overlay<2>{something}      % shows this item only on slide 2
+  \overlay<1-2>{something}    % shows this item only on slides 1,2
+  \overlay<1-3>{something}    % shows this item only on slides 1,2,3
+  \overlay<2->{something}     % shows this item from on slide 2 to the last one.
+  \overlay<1,3->{something}   % shows this item only on slide 1 and slide 3 to the last one.
+  \end{frame}
+
+.. note:: 
+
+  One can use the same option for the block environments 
+
+  .. code-block:: latex 
+    :caption: Beamer overlay theorem example
+
+    \begin{theorem}<1>
+    My theorem
+    \end{theorem}
+  
+
+only
+~~~~
+
+As the name says, ``\only<1>{something}`` displays the item on slide 1 only. 
+Only works differently compared to the rest as it does not keep its place when not used. 
+That is, the following code will create three slides where the position of each line is the same. 
+
+.. code-block:: latex
+  :caption: Beamer only example
+
+  \begin{frame}{itemize example}
+  \only<1>{something1} 
+  \only<2>{something2} 
+  \only<3>{something3} 
+  \end{frame}
+
+Options
+~~~~~~~~
+
+When using the overlay commands, sometimes it is hard to remember. 
+Play with the following options to see which one works the best for your presentation. 
+
+.. code-block:: latex
+
+  \begin{frame}{itemize example}
+  \setbeamercovered{invisible}    % default option
+  \setbeamercovered{visible}      
+  \setbeamercovered{transparent}  
+  \end{frame}
+
+
+
+
+  

@@ -1,0 +1,155 @@
+Aug 29, 2022
+==============
+
+More on LaTeX
+-------------
+
+Resources/References:
+
+- Overleaf file_ used in the lecture
+- `The Not So Short Introduction to LATEX <https://tobi.oetiker.ch/lshort/lshort.pdf>`_
+- `OverLeaf Mathematical Expressions <https://www.overleaf.com/learn/latex/Mathematical_expressions>`_
+
+.. _file: https://www.overleaf.com/read/pnjfsjgwjnyv
+
+Overleaf support multi-user editiong mode. 
+
+In math mode, having space does not do anything. 
+To create proper spacing between expressions, 
+there are two approaches, 
+direct (absolute) and relative. 
+I suggest getting used to the relative method. 
+Here are the spaces created by the following commands in math mode.
+
+* ~
+* \\, 
+* \\;
+* \\:
+* \\quad
+* \\qquad
+
+These are rendered as follows.
+
+.. math:: 
+
+  A~B\\
+  A\,B\\
+  A\;B\\
+  A\:B\\
+  A\quad B\\
+  A\qquad B
+
+With the **\hspace{<option>}** command, you may use the absolute spacing value. Here is one with ``1 in`` option.
+
+.. math:: 
+
+  A\hspace{1in}B %A\hspace{1in}B
+
+Vertical spacing can be done in a similar manner. 
+However, often it is done in text mode. 
+The three basic ones are \\smallskip, \\medskip, and \\bigskip. 
+
+.. code-block:: latex
+
+  some interesting paragraph.
+
+  \medskip
+
+The **\vspace{<option>}** corresponds to hspace. Useage is similar, and both hspace and vsapce support negative offsets.
+
+Sometimes our calculation requires more than one line. 
+In general, without proper multiline command, math expressions may go out of the page margins.
+
+.. math:: 
+
+  11^11 + 22^22 + 33^33 = 285311670611 + 341427877364219557396646723584 + 129110040087761027839616029934664535539337183380513
+
+We use multi-line math mode. One popular option is the **align** environment (**align\*** for non-numbered multi-line math mode).
+
+.. code-block:: latex
+
+  \begin{align}
+  11^11 + 22^22 + 33^33 % there is no line break here. The new line is for humans.
+    = 285311670611 + 341427877364219557396646723584 \\
+    + 129110040087761027839616029934664535539337183380513
+  \end{align}
+
+This code produces
+
+.. math:: 
+
+  \begin{align}
+  11^11 + 22^22 + 33^33 
+    &= 285311670611 + 341427877364219557396646723584 \\
+    &+ 129110040087761027839616029934664535539337183380513
+  \end{align}
+
+**Underset** and **overset**
+
+When using inline math mode, sometimes we want to override the format. 
+The \\displaymath command makes inline math into math mode. 
+However, it often creates unnecessary vertical line spaces. 
+For commands like :math:`\lim` or :math:`\sum`, one can use the **underset** and **overset** commands.
+
+.. code-block:: latex
+
+  \lim_{x \to c} f(x) \text{or}
+  \underset{x \to c}{\lim} f(x)
+
+For insatnce, compare :math:`\lim_{x \to c} f(x)` with :math:`\underset{x \to c}{\lim} f(x)`.
+
+We may need to use long or complicated expressions. When using such several times, it is desired to make an alias. In LaTeX, this can be done by using the **renewcommand** for text and **DeclareMathOperator** for math functions. 
+These need to be declared in the preamble that is before the begin{document} command. 
+We have not touched upon this but see the tex example file. 
+
+.. code-block:: latex
+
+  # In preamble
+
+  \renewcommand{\math6000}{{MATH 6000. Communicating Mathematics.}}
+  \DeclareMathOperator{\boldLim}{\mathbf{\lim}}
+
+Once the above lines are added, the LaTeX compiler will replace \\math6000 with 
+''MATH 6000. Communicating Mathematics.'' 
+
+.. note:: 
+
+  These commands can have arguments, i.e., inputs. 
+
+In math mode, the command \\operatorname does the job for DeclareMathOperator. But one needs to add it every time.
+
+.. code-block:: latex
+
+  \text{lim}_{x\to \infty} f(x) ~\text{vs.}~ \lim_{x\to \infty} f(x) \\
+  \text{image} \Phi ~\text{vs.}~ \operatorname{image} \Phi
+
+This code will to shown as 
+
+.. math:: 
+
+  &\text{lim}_{x\to \infty} f(x) ~\text{vs.}~ \lim_{x\to \infty} f(x) \\
+  &\text{image} \Phi ~\text{vs.}~ \operatorname{image} \Phi.
+
+See https://tex.stackexchange.com/questions/67506/newcommand-vs-declaremathoperator for more information.
+
+Recall that the curly brakets \{ and \} are used for grouping. An example is \\frac function. It takes two arguments (inputs) that is \\frac AB produces :math:`\frac AB`. 
+Sometimes expressions such as A or B is more than one character. 
+We use \{ expression \} to group. 
+To express :math:`\frac{40}{50}`, we use \\frac{40}{50}. 
+
+
+---------
+
+.. After class
+.. ~~~~~~~~~~~
+.. HW2; Short math exercise with align, matrix, tag, 
+
+.. HW3 (2-week project); Form a group of 2-3 people, read one of the articles. 
+
+.. - Who was the author  
+.. - What was the level of the article? You could say something like, it was easy or (hard) to follow. We liked it because xx and yy were there.  
+.. - What were the things that are different to your previous understanding?  
+.. - Based on your article, what are the things you want to update? 
+..   - Are there any improvments you can make for your HW1? If so, why don't you revised and include them. 
+
+.. - You will submit them to Gradescope (or Canvas) and make a small presentation in class.   

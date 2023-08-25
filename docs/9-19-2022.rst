@@ -1,0 +1,153 @@
+==============
+Sep 19, 2022
+==============
+
+HW2 Review:
+------------
+
+- No gap is also a gap (existence of identity) and a negative gap is possible.
+- Spacing commands can be stacked, ``\quad \quad`` possible.
+- What does ``\`` do? http://latexref.xyz/_005c_0028SPACE_0029.html#:-:text=19.6%20Backslash%2Dspace%2C%20%5C,backslash%20followed%20by%20a%20space.&text=Produce%20a%20space.,words%2C%20LaTeX%20produces%20white%20space
+  
+.. - How to use "~" in LaTeX; also in HW 3
+
+HW3 Review:
+-----------
+
+- How to use " ", and .`\\`.
+- Symbols vs sentences
+  
+    We were taught in previous classes that we could use symbols in our writing, but from this article we learned that ``not all symbols are universal``. Instead, ``abbreviations need to be spelled out``, so that it can be clear for anyone reading the proof. We were also surprised that our proofs need to follow proper English grammar and syntax because that was not required from our previous courses.
+
+    Part of this difficulty for students, on whether to use proper English or symbols, is sometimes to due to the `instructors preference`. Some professors will ask students to strictly use math symbols and math notation as a way to be more ``efficient``, but this certainly comes with an assumption that these symbols are already known. Certainly a seasoned professor would likely know what to expect from student writing but this lends itself to being understood mainly by readers who already know these things. This is where using English grammar makes mathematical writing much more accessible to far more readers. In fact, many professors actually do require a more formal way of writing in such a way because it makes for much more clear explanation and understanding of mathematics. But again, some of professors just required shorthand writing from us.
+
+- More
+  
+    In addition to what is mentioned above, I found that ``using logical symbols and abbreviations to be bad``. For example, logical symbols: ∀ (for all) or ∃ (there exists) and abbreviations: s.t (such that) or iff (if and only if) are ``bad to use``. In proof classes, professors use these symbols in there writing and explanations so ``we assume it is okay`` to use them in our own writing. As the article stated, it is best to write out exactly what you mean in ordinary language.
+
+.. note:: 
+
+    There are differences when presenting work to classmates, students, teachers, and to the general public (professional or not).
+
+Things to do
+-------------
+
+- Time for presentations; Give about 10-15 mins for each group 
+
+- LaTeX Preamble; We will need to cover the ``theorem`` environment, ``bibliography``, and the ``includegraphicx`` command.
+
+- Guide to finding a good topic; provide evaluation criteria; 
+  
+
+LaTeX preamble and more on Itemize
+-----------------------------------
+
+.. code-block::
+    :caption: Preamble Example
+    :linenos:
+
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%% Beginning of preamble %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \documentclass[reqno, 12 pt]{amsart}
+        \usepackage{amsfonts,amsmath,amssymb,mathrsfs}
+        \usepackage[utf8]{inputenc}
+        \usepackage{fullpage,xcolor}
+        \usepackage{graphicx}
+        \usepackage{hyperref}
+        \usepackage{enumitem}
+        \setlength\parindent{0pt}
+
+        \newcommand{\ZZ}{\mathbb{Z}}
+        \newcommand{\NN}{\mathbb{N}}
+        \DeclareMathOperator{\im}{im}
+        \newcommand{\HW}{HW1}
+        \newcommand{\duedate}{Due Saturday Aug 27th, 2022 (by midnight)}
+
+        %%%%%%
+        %%%%%%
+        \title{MATH 6000 \HW\ template}
+        \date{\duedate}
+        %%%%%%
+        %%%%%%
+
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%% End of preamble %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+        \begin{document}
+        \maketitle 
+
+Let's look at some items in the preamble. 
+The command ``\documentclass`` defined which class to use. 
+It will be in the form ``\documentclass[<options>]{<class name>}``. 
+So, for ``\documentclass[reqno, 12 pt]{amsart}``, we declare to use the class `amsart` with options `reqno` and `12 pt`. 
+
+.. note:: 
+
+    To use a class, one needs its `class file`.
+    When compiling on Overleaf, ``amsart.cls`` is provided by the Overleaf server. 
+
+    The options can be omitted and depend on classes. 
+
+Often classes do not include all the features we want. 
+There are several useful packages to use and ``\usepackage`` does the job.
+As before, it is of the form ``\usepackage[<options>]{<package name>}``.
+
+.. note:: 
+
+    Try to limit the number of packages to include. 
+    Sometimes they conflict with each other and sometimes they need to be loaded in a specific order.
+
+We already touched upon ``\newcommand`` and ``\DeclareMathOperator``. See ref [link does not work on Canvas].
+
+
+Lastly, ``\title`` and ``\date`` define the title and date of the document (the ``\today`` will print today's date.) 
+Recall that packages and user defined commands are optional. 
+Thus, we could have a minimal working example as follows
+
+
+.. code-block::
+    :caption: Minimal Working Example
+    :linenos:
+
+        \documentclass{amsart}
+
+        \title{MATH 6000 Minimal Working Example}
+        \date{\today}
+
+        \begin{document}
+        \maketitle 
+        \end{document}
+
+
+HW4 is related to the preamble and packages used in the thesis class. 
+
+The `array` and `tabular` will be our next LaTeX topic. 
+
+
+
+class ends here
+
+HW4 preview: 
+------------
+
+Resources for HW4: 
+
+- https://www.csusb.edu/graduate-studies/current-students/thesis-project-dissertation/formatting-your-manuscript/mathematics
+
+- https://www.csusb.edu/mathematics/graduate/thesis-resources
+
+- https://www.overleaf.com/read/prmnfsqfxmzr
+
+HW 4 Instructions:
+
+- Download (copy) the thesis project on Overleaf https://www.csusb.edu/mathematics/graduate/thesis-resources.
+- What is the name of the class in the CSUSB LaTeX thesis template?
+- What packages are used in this template file?
+- What are the user defined commands?
+- Are there something we did not cover in class? 
+- Continue with your answer to the packages: Choose a package in your answer and find its documentation file (for instance, Google it). Attach the file. 
+
+
+
+
+
+class ends here
+  
