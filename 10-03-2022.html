@@ -1,55 +1,112 @@
-
 <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta charset="utf-8" />
-    <title>Oct 3rd, 2022 &#8212; MATH 6000 Communicating Matheamtics v1 documentation</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oct 3rd, 2022 &mdash; MATH 6000 Communicating Matheamtics v1 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Oct 10th, 2022" href="10-10-2022.html" />
-    <link rel="prev" title="Sep 26, 2022" href="9-26-2022.html" />
-   
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+    <link rel="prev" title="Sep 26, 2022" href="9-26-2022.html" /> 
+</head>
 
-  </head><body>
-  
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
           
+          
+          <a href="index.html" class="icon icon-home">
+            MATH 6000 Communicating Matheamtics
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="8-22-2022.html">Aug 22, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8-29-2022.html">Aug 29, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-19-2022.html">Sep 19, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-26-2022.html">Sep 26, 2022</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Oct 3rd, 2022</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#things-to-do">Things to do</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#latex-theorem-environment">LaTeX Theorem Environment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#naive-approach">Naive approach</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#theorem-environment-approach">Theorem environment approach</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#additional-types">Additional types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#numbering-options">Numbering options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a-named-theorem">A named theorem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#theorem-styles-amsthm">Theorem styles; amsthm</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="10-10-2022.html">Oct 10th, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-17-2022.html">Oct 17th, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-24-2022.html">Oct 24th, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-31-2022.html">Oct 31th, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-14-2022.html">Nov 14th, 2022</a></li>
+</ul>
 
-          <div class="body" role="main">
-            
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MATH 6000 Communicating Matheamtics</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Oct 3rd, 2022</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/10-03-2022.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
   <div class="section" id="oct-3rd-2022">
-<h1>Oct 3rd, 2022<a class="headerlink" href="#oct-3rd-2022" title="Permalink to this headline">¶</a></h1>
+<h1>Oct 3rd, 2022<a class="headerlink" href="#oct-3rd-2022" title="Permalink to this headline"></a></h1>
 <div class="section" id="things-to-do">
-<h2>Things to do<a class="headerlink" href="#things-to-do" title="Permalink to this headline">¶</a></h2>
+<h2>Things to do<a class="headerlink" href="#things-to-do" title="Permalink to this headline"></a></h2>
 <ul class="simple">
 <li><p>The <code class="docutils literal notranslate"><span class="pre">theorem</span></code> environment; we will cover the <code class="docutils literal notranslate"><span class="pre">bibliography</span></code> and <code class="docutils literal notranslate"><span class="pre">itemize</span></code> environments, and the <code class="docutils literal notranslate"><span class="pre">includegraphicx</span></code> command soon.</p></li>
 </ul>
 </div>
 <div class="section" id="latex-theorem-environment">
-<h2>LaTeX Theorem Environment<a class="headerlink" href="#latex-theorem-environment" title="Permalink to this headline">¶</a></h2>
+<h2>LaTeX Theorem Environment<a class="headerlink" href="#latex-theorem-environment" title="Permalink to this headline"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>For a detailed and complete explanation, refer to the Overleaf document <a class="reference external" href="https://www.overleaf.com/learn/latex/Theorems_and_proofs">https://www.overleaf.com/learn/latex/Theorems_and_proofs</a>.</p>
 <p>Also, check out our thesis template, <a class="reference external" href="https://www.overleaf.com/read/prmnfsqfxmzr">https://www.overleaf.com/read/prmnfsqfxmzr</a>.</p>
 </div>
 <div class="section" id="naive-approach">
-<h3>Naive approach<a class="headerlink" href="#naive-approach" title="Permalink to this headline">¶</a></h3>
+<h3>Naive approach<a class="headerlink" href="#naive-approach" title="Permalink to this headline"></a></h3>
 <p>When writing mathematical documents such as your thesis, we often need to use definitions, theorems, etc.
 When there are more than a handful, it is customary to put labels on them.
 The LaTeX <code class="docutils literal notranslate"><span class="pre">theorem</span></code> environment provides a way to handle this efficiently.</p>
@@ -59,7 +116,7 @@ The LaTeX <code class="docutils literal notranslate"><span class="pre">theorem</
 <p><strong>Proposition 2.</strong> Another good theorem.</p>
 </div></blockquote>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">Theorems, naive approach</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-text">Theorems, naive approach</span><a class="headerlink" href="#id1" title="Permalink to this code"></a></div>
 <div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\noindent</span> <span class="k">\textbf</span><span class="nb">{</span>Theorem 1.<span class="nb">}</span> We have
 <span class="s">$</span><span class="nv">\begin</span><span class="nb">{pmatrix}</span>
 <span class="m">1</span><span class="nb">&amp;</span><span class="m">0</span><span class="nb"> </span><span class="nv">\\</span><span class="nb"></span>
@@ -83,10 +140,10 @@ you need to redo the numbering.
 Imagine, that you do it for 20 statements and 10 times….</p>
 </div>
 <div class="section" id="theorem-environment-approach">
-<h3>Theorem environment approach<a class="headerlink" href="#theorem-environment-approach" title="Permalink to this headline">¶</a></h3>
+<h3>Theorem environment approach<a class="headerlink" href="#theorem-environment-approach" title="Permalink to this headline"></a></h3>
 <p>The theorem environment is often defined in the preamble.</p>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">theorem environment example</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-text">theorem environment example</span><a class="headerlink" href="#id2" title="Permalink to this code"></a></div>
 <div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\newtheorem</span><span class="nb">{</span>theorem<span class="nb">}{</span>Theorem<span class="nb">}</span>
 <span class="c">%           theorem is used in a begin and end pair to call Theorem</span>
 <span class="c">%                    Theorem N. will be displayed</span>
@@ -97,7 +154,7 @@ Imagine, that you do it for 20 statements and 10 times….</p>
 Be careful there are <code class="docutils literal notranslate"><span class="pre">theorem</span></code> and <code class="docutils literal notranslate"><span class="pre">Theorem</span></code>.
 That is, with this setting, we may type Theorem 1 as follows.</p>
 <div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">theorem environment example</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-text">theorem environment example</span><a class="headerlink" href="#id3" title="Permalink to this code"></a></div>
 <div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>theorem<span class="nb">}</span>
 We have an amazing matrix multiplication example.
 <span class="k">\end</span><span class="nb">{</span>theorem<span class="nb">}</span>
@@ -106,7 +163,7 @@ We have an amazing matrix multiplication example.
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">theorem</span></code> in <code class="docutils literal notranslate"><span class="pre">\newtheorem{theorem}{Theorem}</span></code> can be anything you want. The following two codes will produce the same result</p>
 <div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text">theorem environment example</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-text">theorem environment example</span><a class="headerlink" href="#id4" title="Permalink to this code"></a></div>
 <div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\newtheorem</span><span class="nb">{</span>thm<span class="nb">}{</span>Theorem<span class="nb">}</span>
 ...
 ...
@@ -118,7 +175,7 @@ We have an amazing matrix multiplication example.
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text">theorem environment example</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-text">theorem environment example</span><a class="headerlink" href="#id5" title="Permalink to this code"></a></div>
 <div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\newtheorem</span><span class="nb">{</span>IamNotSureIfThisIsaTheorem<span class="nb">}{</span>Theorem<span class="nb">}</span>
 ...
 ...
@@ -131,7 +188,7 @@ We have an amazing matrix multiplication example.
 </div>
 </div>
 <div class="section" id="additional-types">
-<h3>Additional types<a class="headerlink" href="#additional-types" title="Permalink to this headline">¶</a></h3>
+<h3>Additional types<a class="headerlink" href="#additional-types" title="Permalink to this headline"></a></h3>
 <p>You will most likely use the following types of statements.</p>
 <ul class="simple">
 <li><p>definitions;</p></li>
@@ -146,7 +203,7 @@ We have an amazing matrix multiplication example.
 <p>Though you need to define them manually, often you want to combine the their numbering systems.
 Here is an example to have both definitions and theorems to share the same numbering.</p>
 <div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text">theorem environment example</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-text">theorem environment example</span><a class="headerlink" href="#id6" title="Permalink to this code"></a></div>
 <div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\newtheorem</span><span class="nb">{</span>theorem<span class="nb">}{</span>Theorem<span class="nb">}</span>
 <span class="k">\newtheroem</span><span class="nb">{</span>definition<span class="nb">}</span>[theorem]<span class="nb">{</span>Definition<span class="nb">}</span>
 ...
@@ -164,9 +221,9 @@ My grade is an &quot;A&quot;.
 </div>
 </div>
 <div class="section" id="numbering-options">
-<h3>Numbering options<a class="headerlink" href="#numbering-options" title="Permalink to this headline">¶</a></h3>
+<h3>Numbering options<a class="headerlink" href="#numbering-options" title="Permalink to this headline"></a></h3>
 <div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text">Subtle differences</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-text">Subtle differences</span><a class="headerlink" href="#id7" title="Permalink to this code"></a></div>
 <div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\newtheorem</span><span class="nb">{</span>theorem<span class="nb">}{</span>Theorem<span class="nb">}</span>
 <span class="k">\newtheroem</span><span class="nb">{</span>definition<span class="nb">}</span>[theorem]<span class="nb">{</span>Definition<span class="nb">}</span>
 <span class="k">\newtheroem</span><span class="nb">{</span>lemma<span class="nb">}{</span>Lemma<span class="nb">}</span>[theorem]
@@ -178,7 +235,7 @@ Let’s assume that the last theorem was <strong>Theorem N</strong>.
 Then <code class="docutils literal notranslate"><span class="pre">\newtheroem{definition}[theorem]{Definition}</span></code> will produce <strong>Definition (N+1)</strong>, whereas <code class="docutils literal notranslate"><span class="pre">\newtheroem{lemma}{Lemma}[theorem]</span></code> will do <strong>Lemma N.1</strong>.</p>
 <p>In your article, you may have multiple chpaters (e.g. your thesis), sections, and subsections. You may number your theorems following these document structures by appending the option <code class="docutils literal notranslate"><span class="pre">[&lt;chapter&gt;|&lt;section&gt;|&lt;subsections&gt;]</span></code>.</p>
 <div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-text">theorem numbering following section numbers</span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-text">theorem numbering following section numbers</span><a class="headerlink" href="#id8" title="Permalink to this code"></a></div>
 <div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\newtheorem</span><span class="nb">{</span>theorem<span class="nb">}{</span>Theorem<span class="nb">}</span>[section]
                              <span class="c">% with this setting the numbering</span>
                              <span class="c">% is of the form:</span>
@@ -188,14 +245,14 @@ Then <code class="docutils literal notranslate"><span class="pre">\newtheroem{de
 </div>
 </div>
 <div class="section" id="a-named-theorem">
-<h3>A named theorem<a class="headerlink" href="#a-named-theorem" title="Permalink to this headline">¶</a></h3>
+<h3>A named theorem<a class="headerlink" href="#a-named-theorem" title="Permalink to this headline"></a></h3>
 <p>There are theorems with special names such as the Pythagorean theorem.</p>
 <blockquote>
 <div><p><strong>Theorem 1 (The Pythagorean Theorem).</strong> ……</p>
 </div></blockquote>
 <p>To add such a theorem name, use the following option.</p>
 <div class="literal-block-wrapper docutils container" id="id9">
-<div class="code-block-caption"><span class="caption-text">add a theorem name</span><a class="headerlink" href="#id9" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-text">add a theorem name</span><a class="headerlink" href="#id9" title="Permalink to this code"></a></div>
 <div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\newtheorem</span><span class="nb">{</span>theorem<span class="nb">}{</span>Theorem<span class="nb">}</span>
 ...
 ...
@@ -211,10 +268,10 @@ Then <code class="docutils literal notranslate"><span class="pre">\newtheroem{de
 We will touch upon this when covering the bibliography and references section.</p>
 </div>
 <div class="section" id="theorem-styles-amsthm">
-<h3>Theorem styles; amsthm<a class="headerlink" href="#theorem-styles-amsthm" title="Permalink to this headline">¶</a></h3>
+<h3>Theorem styles; amsthm<a class="headerlink" href="#theorem-styles-amsthm" title="Permalink to this headline"></a></h3>
 <p>Sometimes, people follow the convention of highlighting key words. In the following example, the theorems, definitions, and lemmas will be in <em>itatic</em>.</p>
 <div class="literal-block-wrapper docutils container" id="id10">
-<div class="code-block-caption"><span class="caption-text">all in italic</span><a class="headerlink" href="#id10" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-text">all in italic</span><a class="headerlink" href="#id10" title="Permalink to this code"></a></div>
 <div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\newtheorem</span><span class="nb">{</span>theorem<span class="nb">}{</span>Theorem<span class="nb">}</span>
 <span class="k">\newtheroem</span><span class="nb">{</span>definition<span class="nb">}</span>[theorem]<span class="nb">{</span>Definition<span class="nb">}</span>
 <span class="k">\newtheroem</span><span class="nb">{</span>lemma<span class="nb">}</span>[theorem]<span class="nb">{</span>Lemma<span class="nb">}</span>
@@ -223,7 +280,7 @@ We will touch upon this when covering the bibliography and references section.</
 </div>
 <p>Using both <strong>bold</strong> and <em>italic</em> may be too much. To avoid this, the <code class="docutils literal notranslate"><span class="pre">amsthm</span></code> package provides theorem styles. Here is a suggestion.</p>
 <div class="literal-block-wrapper docutils container" id="id11">
-<div class="code-block-caption"><span class="caption-text">theorem style</span><a class="headerlink" href="#id11" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-text">theorem style</span><a class="headerlink" href="#id11" title="Permalink to this code"></a></div>
 <div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\usepackage</span><span class="nb">{</span>amsthm<span class="nb">}</span>
 
 <span class="k">\newtheorem</span><span class="nb">{</span>theorem<span class="nb">}{</span>Theorem<span class="nb">}</span>
@@ -245,85 +302,34 @@ We will touch upon this when covering the bibliography and references section.</
 </div>
 
 
+           </div>
           </div>
-          
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="9-26-2022.html" class="btn btn-neutral float-left" title="Sep 26, 2022" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="10-10-2022.html" class="btn btn-neutral float-right" title="Oct 10th, 2022" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022-2023, Youngsu Kim.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">MATH 6000 Communicating Matheamtics</a></h1>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
 
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-<p class="caption"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="8-22-2022.html">Aug 22, 2022</a></li>
-<li class="toctree-l1"><a class="reference internal" href="8-29-2022.html">Aug 29, 2022</a></li>
-<li class="toctree-l1"><a class="reference internal" href="9-19-2022.html">Sep 19, 2022</a></li>
-<li class="toctree-l1"><a class="reference internal" href="9-26-2022.html">Sep 26, 2022</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Oct 3rd, 2022</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#things-to-do">Things to do</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#latex-theorem-environment">LaTeX Theorem Environment</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="10-10-2022.html">Oct 10th, 2022</a></li>
-<li class="toctree-l1"><a class="reference internal" href="10-17-2022.html">Oct 17th, 2022</a></li>
-<li class="toctree-l1"><a class="reference internal" href="10-24-2022.html">Oct 24th, 2022</a></li>
-<li class="toctree-l1"><a class="reference internal" href="10-31-2022.html">Oct 31th, 2022</a></li>
-<li class="toctree-l1"><a class="reference internal" href="11-14-2022.html">Nov 14th, 2022</a></li>
-</ul>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="9-26-2022.html" title="previous chapter">Sep 26, 2022</a></li>
-      <li>Next: <a href="10-10-2022.html" title="next chapter">Oct 10th, 2022</a></li>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>$('#searchbox').show(0);</script>
-
-
-
-
-
-
-
-
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2022-2023, Youngsu Kim.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.4</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
-      
-      |
-      <a href="_sources/10-03-2022.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
-
-    
-
-    
-  </body>
+</body>
 </html>
