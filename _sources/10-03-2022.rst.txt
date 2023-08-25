@@ -1,0 +1,221 @@
+==============
+Oct 3rd, 2022
+==============
+
+Things to do
+-------------
+
+- The ``theorem`` environment; we will cover the ``bibliography`` and ``itemize`` environments, and the ``includegraphicx`` command soon.
+  
+LaTeX Theorem Environment
+--------------------------
+
+.. note:: 
+
+    For a detailed and complete explanation, refer to the Overleaf document https://www.overleaf.com/learn/latex/Theorems_and_proofs. 
+
+    Also, check out our thesis template, https://www.overleaf.com/read/prmnfsqfxmzr.
+
+Naive approach
+~~~~~~~~~~~~~~
+
+When writing mathematical documents such as your thesis, we often need to use definitions, theorems, etc. 
+When there are more than a handful, it is customary to put labels on them. 
+The LaTeX ``theorem`` environment provides a way to handle this efficiently. 
+
+Here is an example without using the theorem environment.
+ 
+    **Theorem 1.** We have :math:`\begin{pmatrix}     1&0 \\     0 &1     \end{pmatrix} \begin{pmatrix}  2&0 \\  0&0   \end{pmatrix}    = \begin{pmatrix}   2&0 \\     0&0  \end{pmatrix}`.
+
+    **Proposition 2.** Another good theorem. 
+
+.. code-block:: latex
+    :caption: Theorems, naive approach 
+
+    \noindent \textbf{Theorem 1.} We have 
+    $\begin{pmatrix}     
+    1&0 \\     
+    0 &1     
+    \end{pmatrix} 
+    \begin{pmatrix}  
+    2&0 \\  
+    0&0   
+    \end{pmatrix}    
+    = \begin{pmatrix}   
+    2&0 \\     
+    0&0  \end{pmatrix}$.\\ 
+
+    \noindent \textbf{Proposition 2.} Another good theorem. 
+
+If these are all you need in your writing, one does not need to use the theorem environment. 
+However, if you change a proposition into a corollary or add a definition between statements, 
+you need to redo the numbering. 
+Imagine, that you do it for 20 statements and 10 times....
+
+Theorem environment approach
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The theorem environment is often defined in the preamble. 
+
+.. code-block:: latex
+    :caption: theorem environment example
+
+    \newtheorem{theorem}{Theorem}
+    %           theorem is used in a begin and end pair to call Theorem
+    %                    Theorem N. will be displayed
+
+Once we have this we can write our theorems in the ``\begin{theorem}`` and ``\end{theroem}`` pair. 
+Be careful there are ``theorem`` and ``Theorem``. 
+That is, with this setting, we may type Theorem 1 as follows. 
+
+.. code-block:: latex
+    :caption: theorem environment example
+
+    \begin{theorem} 
+    We have an amazing matrix multiplication example. 
+    \end{theorem}
+
+The ``theorem`` in ``\newtheorem{theorem}{Theorem}`` can be anything you want. The following two codes will produce the same result
+
+.. code-block:: latex
+    :caption: theorem environment example
+
+    \newtheorem{thm}{Theorem}
+    ...
+    ...
+
+    \begin{thm} 
+    We have an amazing matrix multiplication example. 
+    \end{thm}    
+
+
+.. code-block:: latex
+    :caption: theorem environment example
+
+    \newtheorem{IamNotSureIfThisIsaTheorem}{Theorem} 
+    ...
+    ...
+
+    \begin{IamNotSureIfThisIsaTheorem} 
+    We have an amazing matrix multiplication example. 
+    \end{IamNotSureIfThisIsaTheorem}    
+
+Additional types
+~~~~~~~~~~~~~~~~
+
+You will most likely use the following types of statements. 
+
+* definitions; 
+* questions/conjectures;
+* examples;
+* remarks; 
+* theorems; 
+* propositions; 
+* corollaries; 
+* lemmas.
+
+Though you need to define them manually, often you want to combine the their numbering systems. 
+Here is an example to have both definitions and theorems to share the same numbering.
+
+.. code-block:: latex
+    :caption: theorem environment example
+
+    \newtheorem{theorem}{Theorem}
+    \newtheroem{definition}[theorem]{Definition}
+    ...
+    ...
+
+    \begin{theorem} 
+    We have an amazing matrix multiplication example. 
+    \end{theorem}
+
+    \begin{definition}
+    My grade is an "A". 
+    \end{definition}
+
+Numbering options
+~~~~~~~~~~~~~~~~~
+
+.. code-block:: latex
+    :caption: Subtle differences 
+
+    \newtheorem{theorem}{Theorem}
+    \newtheroem{definition}[theorem]{Definition}
+    \newtheroem{lemma}{Lemma}[theorem]
+
+There are differences when putting ``[theorem]`` before or after the theorem name. 
+Let's assume that the last theorem was **Theorem N**.
+Then ``\newtheroem{definition}[theorem]{Definition}`` will produce **Definition (N+1)**, whereas ``\newtheroem{lemma}{Lemma}[theorem]`` will do **Lemma N.1**.
+
+In your article, you may have multiple chpaters (e.g. your thesis), sections, and subsections. You may number your theorems following these document structures by appending the option ``[<chapter>|<section>|<subsections>]``. 
+
+.. code-block:: latex
+    :caption: theorem numbering following section numbers 
+
+    \newtheorem{theorem}{Theorem}[section] 
+                                 % with this setting the numbering 
+                                 % is of the form: 
+                                 % Statement {sec. num}.{N}.
+
+
+A named theorem
+~~~~~~~~~~~~~~~~
+
+There are theorems with special names such as the Pythagorean theorem. 
+
+    **Theorem 1 (The Pythagorean Theorem).** ......  
+
+To add such a theorem name, use the following option. 
+
+.. code-block:: latex
+    :caption: add a theorem name
+
+    \newtheorem{theorem}{Theorem}
+    ...
+    ...
+    ...
+
+    \begin{theorem}[{The Pythagorean Theorem}] .......
+    ...
+    \end{theorem}
+
+This will be helpful when you quote statements from books and papers or even within your article. 
+We will touch upon this when covering the bibliography and references section. 
+
+Theorem styles; amsthm
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Sometimes, people follow the convention of highlighting key words. In the following example, the theorems, definitions, and lemmas will be in *itatic*. 
+
+.. code-block:: latex
+    :caption: all in italic
+
+    \newtheorem{theorem}{Theorem}
+    \newtheroem{definition}[theorem]{Definition}
+    \newtheroem{lemma}[theorem]{Lemma}
+
+Using both **bold** and *italic* may be too much. To avoid this, the ``amsthm`` package provides theorem styles. Here is a suggestion. 
+
+.. code-block:: latex
+    :caption: theorem style
+
+    \usepackage{amsthm}
+
+    \newtheorem{theorem}{Theorem}
+    \newtheroem{lemma}[theorem]{Lemma}
+    
+    \theoremstyle{definition}
+    \newtheroem{definition}[theorem]{Definition}
+    \newtheroem{example}[theorem]{Example}
+    
+    \theoremstyle{remark}
+    \newtheroem{remark}[theorem]{Remark}
+    % \newtheroem*{remark}{Remark} % use this if you prefer unnumbered remarks
+
+Checkout our thesis template preamble, https://www.overleaf.com/read/prmnfsqfxmzr. 
+
+
+
+
+.. class ends here
+  

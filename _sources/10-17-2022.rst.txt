@@ -1,0 +1,165 @@
+===============
+Oct 17th, 2022
+===============
+
+.. Prep for the course
+.. ~~~~~~~~~~~~~~~~~~~
+
+Review
+------
+
+* ``array`` environment: align, hline, left & right
+* ``theorem`` environment: named theorem
+* ``bibliography``
+
+Things to do
+-------------
+
+- ``includegraphics`` https://www.overleaf.com/learn/latex/Inserting_Images
+- ``itemize`` environments; ``enumitem`` package https://ctan.org/pkg/enumitem?lang=en 
+
+These notes are heavily based on the Overleaf page listed above. 
+
+Images in LaTeX 
+----------------
+
+How to include images
+~~~~~~~~~~~~~~~~~~~~~~
+
+To include images in LaTeX, we need to prepare them in certain formats. 
+Well-known formats such as PNG, JPEG, PDF are supported and work well. 
+The package we need is ``graphicx``, and the command we use is ``\includegraphics[<options>]{filename}``. 
+Assume that we have an image ``graph1.PNG``, the following code will include the image in the LaTeX output.
+
+.. code-block:: latex
+    :caption: include images
+
+    % in preamble
+    \usepackage{graphicx}
+
+    % in body
+    \includegraphics{graph1} % or
+    \includegraphics{"graph1.PNG"} % or
+
+You would notice that sometimes, the image size can be too big or small. 
+If it is small and in PNG format, you'd need to find the original source. 
+For big images, we can scale them down with options. Here are some examples. 
+
+.. code-block:: latex
+    :caption: image size
+
+    \includegraphics[scale=0.5]{graph1} % half size 
+    \includegraphics[width=5in]{graph1} % width 5 in 
+    \includegraphics[width=\textwidth]{graph1} % match textwidth
+    \includegraphics[width=0.5\textwidth]{graph1} % half of textwidth
+
+How to position images
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Without additional settings, these images are left-aligned, just like text blocks. 
+Sometimes, we want to have more control about their positions. 
+One way is to use the ``figure`` invironment. 
+This is also useful when you need to refer to the image later, i.e., ``\ref{}`` to the images. 
+
+.. code-block:: latex
+    :caption: figure
+
+    \begin{figure} 
+    \includegraphics[width=0.5\textwidth]{graph1} % the half of the textwidth
+    \centering        % I forgot to include this in class.
+    \caption{Graph caption}
+    \label{firstGraph}
+    \end{figure}
+
+The command ``\centering`` makes the image center aligned, and ``\caption{}`` creates a caption (it can be placed before ``\includegraphics`` to have top captions). 
+Lastly, ``\label`` works the same way as in theorems, equations and etc; ``\label`` seems to require ``\caption{<name>}`` defined. 
+
+
+More on positioning images
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When including images, LaTeX decides where to place them. We may override this sometimes. The figure environment accepts position options. 
+
+.. code-block:: latex
+    :caption: figure
+
+    \begin{figure}[t] % you may use, b,t,h and ! as well. They stand for ``bottom, top, here, and force``, respectively.
+    \includegraphics[width=0.5\textwidth]{graph1} % the half of the textwidth
+    \centering
+    \end{figure}
+
+
+
+Wrapfigure package
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When you have a small figure and want to position it next to your text, try the ``wrapfigure`` package, https://www.overleaf.com/learn/latex/Wrapping_text_around_figures.
+
+.. code-block:: latex
+    :caption: wrapfig package
+
+    %%%% in preamble
+    \usepackage{wrapfig}
+
+    %%%% in body
+    \begin{wrapfigure}[lineheight]{position}{width}
+    \includegraphics{graph1}
+    \end{wrapfigure}
+
+
+Image folder
+~~~~~~~~~~~~~~~~
+
+When there are several images, it is better to organize them as a folder. We do not need to include the prefix with the option ``\graphicspath{<relative path>}`` in your preamble. 
+
+
+Enumitem package
+-----------------
+
+Today, we won't have enough time to cover the ``enumitem`` package. 
+Instead, we use the ``shortlabels`` option so that ``enumitem`` works similarily to the ``enumerate`` package.
+
+Recall to create an ordered list, we use ``\begin{enumerate}`` and ``\end{enumerate}``.
+
+.. code-block:: latex
+    :caption: enumerate
+
+    %%%% body
+    \begin{enumerate}
+    \item a
+    \item b
+    \end{enumerate}
+
+This will create an ordered list and the LaTeX class defines its label. 
+There are many ways to customize the label (one can do this without using additional packages). 
+A quick and convenient way to do this is to use the ``enumerate`` package or the ``enumitem`` package with the option ``shortlabels``. 
+
+
+.. code-block:: latex
+    :caption: enumerate/enumitem pacakge
+
+    %%%% preamble
+    \usepackage[shortlabels]{enumitem}  % With this enumitem works in a similar way as enumurate
+    \usepackage{enumerate}              % This line is equivalent to the line above. 
+                                        % Since the enumerate package is no longer actively managed 
+                                        % we recommand the enumitem pacakge.
+
+    %%%% body
+    \begin{enumerate}[(A)]  % [<desired label>]
+    \item a
+    \item b
+    \end{enumerate}
+
+In the desired label, you may put many different labels such as ``a,A,i,I`` with or without parenthesis and with ``.``. 
+Partial prerenthesis works too, e.g., ``\begin{enumerate}[i.)]`` creates labels ``i.)``, ``ii.)``, and so on.
+That's all for this week.
+
+
+
+
+.. class ends here
+  
+
+  
+
+  

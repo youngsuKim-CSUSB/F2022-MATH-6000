@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Aug 29, 2022 &#8212; MATH 6000 Communicating Matheamtics v1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Sep 19, 2022" href="9-19-2022.html" />
+    <link rel="prev" title="Aug 22, 2022" href="8-22-2022.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="aug-29-2022">
+<h1>Aug 29, 2022<a class="headerlink" href="#aug-29-2022" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="more-on-latex">
+<h2>More on LaTeX<a class="headerlink" href="#more-on-latex" title="Permalink to this headline">¶</a></h2>
+<p>Resources/References:</p>
+<ul class="simple">
+<li><p>Overleaf <a class="reference external" href="https://www.overleaf.com/read/pnjfsjgwjnyv">file</a> used in the lecture</p></li>
+<li><p><a class="reference external" href="https://tobi.oetiker.ch/lshort/lshort.pdf">The Not So Short Introduction to LATEX</a></p></li>
+<li><p><a class="reference external" href="https://www.overleaf.com/learn/latex/Mathematical_expressions">OverLeaf Mathematical Expressions</a></p></li>
+</ul>
+<p>Overleaf support multi-user editiong mode.</p>
+<p>In math mode, having space does not do anything.
+To create proper spacing between expressions,
+there are two approaches,
+direct (absolute) and relative.
+I suggest getting used to the relative method.
+Here are the spaces created by the following commands in math mode.</p>
+<ul class="simple">
+<li><p>~</p></li>
+<li><p>\,</p></li>
+<li><p>\;</p></li>
+<li><p>\:</p></li>
+<li><p>\quad</p></li>
+<li><p>\qquad</p></li>
+</ul>
+<p>These are rendered as follows.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A~B\\
+A\,B\\
+A\;B\\
+A\:B\\
+A\quad B\\
+A\qquad B\end{split}\]</div>
+<p>With the <strong>hspace{&lt;option&gt;}</strong> command, you may use the absolute spacing value. Here is one with <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">in</span></code> option.</p>
+<div class="math notranslate nohighlight">
+\[A\hspace{1in}B %A\hspace{1in}B\]</div>
+<p>Vertical spacing can be done in a similar manner.
+However, often it is done in text mode.
+The three basic ones are \smallskip, \medskip, and \bigskip.</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span>some interesting paragraph.
+
+<span class="k">\medskip</span>
+</pre></div>
+</div>
+<p>The <strong>vspace{&lt;option&gt;}</strong> corresponds to hspace. Useage is similar, and both hspace and vsapce support negative offsets.</p>
+<p>Sometimes our calculation requires more than one line.
+In general, without proper multiline command, math expressions may go out of the page margins.</p>
+<div class="math notranslate nohighlight">
+\[11^11 + 22^22 + 33^33 = 285311670611 + 341427877364219557396646723584 + 129110040087761027839616029934664535539337183380513\]</div>
+<p>We use multi-line math mode. One popular option is the <strong>align</strong> environment (<strong>align*</strong> for non-numbered multi-line math mode).</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>align<span class="nb">}</span>
+11<span class="nb">^</span>11 + 22<span class="nb">^</span>22 + 33<span class="nb">^</span>33 <span class="c">% there is no line break here. The new line is for humans.</span>
+  = 285311670611 + 341427877364219557396646723584 <span class="k">\\</span>
+  + 129110040087761027839616029934664535539337183380513
+<span class="k">\end</span><span class="nb">{</span>align<span class="nb">}</span>
+</pre></div>
+</div>
+<p>This code produces</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+11^11 + 22^22 + 33^33
+  &amp;= 285311670611 + 341427877364219557396646723584 \\
+  &amp;+ 129110040087761027839616029934664535539337183380513
+\end{align}\end{split}\]</div>
+<p><strong>Underset</strong> and <strong>overset</strong></p>
+<p>When using inline math mode, sometimes we want to override the format.
+The \displaymath command makes inline math into math mode.
+However, it often creates unnecessary vertical line spaces.
+For commands like <span class="math notranslate nohighlight">\(\lim\)</span> or <span class="math notranslate nohighlight">\(\sum\)</span>, one can use the <strong>underset</strong> and <strong>overset</strong> commands.</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\lim</span><span class="nb">_{</span>x <span class="k">\to</span> c<span class="nb">}</span> f(x) <span class="k">\text</span><span class="nb">{</span>or<span class="nb">}</span>
+<span class="k">\underset</span><span class="nb">{</span>x <span class="k">\to</span> c<span class="nb">}{</span><span class="k">\lim</span><span class="nb">}</span> f(x)
+</pre></div>
+</div>
+<p>For insatnce, compare <span class="math notranslate nohighlight">\(\lim_{x \to c} f(x)\)</span> with <span class="math notranslate nohighlight">\(\underset{x \to c}{\lim} f(x)\)</span>.</p>
+<p>We may need to use long or complicated expressions. When using such several times, it is desired to make an alias. In LaTeX, this can be done by using the <strong>renewcommand</strong> for text and <strong>DeclareMathOperator</strong> for math functions.
+These need to be declared in the preamble that is before the begin{document} command.
+We have not touched upon this but see the tex example file.</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span># In preamble
+
+<span class="k">\renewcommand</span><span class="nb">{</span><span class="k">\math</span>6000<span class="nb">}{{</span>MATH 6000. Communicating Mathematics.<span class="nb">}}</span>
+<span class="k">\DeclareMathOperator</span><span class="nb">{</span><span class="k">\boldLim</span><span class="nb">}{</span><span class="k">\mathbf</span><span class="nb">{</span><span class="k">\lim</span><span class="nb">}}</span>
+</pre></div>
+</div>
+<p>Once the above lines are added, the LaTeX compiler will replace \math6000 with
+‘’MATH 6000. Communicating Mathematics.’’</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These commands can have arguments, i.e., inputs.</p>
+</div>
+<p>In math mode, the command \operatorname does the job for DeclareMathOperator. But one needs to add it every time.</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\text</span><span class="nb">{</span>lim<span class="nb">}_{</span>x<span class="k">\to</span> <span class="k">\infty</span><span class="nb">}</span> f(x) ~<span class="k">\text</span><span class="nb">{</span>vs.<span class="nb">}</span>~ <span class="k">\lim</span><span class="nb">_{</span>x<span class="k">\to</span> <span class="k">\infty</span><span class="nb">}</span> f(x) <span class="k">\\</span>
+<span class="k">\text</span><span class="nb">{</span>image<span class="nb">}</span> <span class="k">\Phi</span> ~<span class="k">\text</span><span class="nb">{</span>vs.<span class="nb">}</span>~ <span class="k">\operatorname</span><span class="nb">{</span>image<span class="nb">}</span> <span class="k">\Phi</span>
+</pre></div>
+</div>
+<p>This code will to shown as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}&amp;\text{lim}_{x\to \infty} f(x) ~\text{vs.}~ \lim_{x\to \infty} f(x) \\
+&amp;\text{image} \Phi ~\text{vs.}~ \operatorname{image} \Phi.\end{split}\]</div>
+<p>See <a class="reference external" href="https://tex.stackexchange.com/questions/67506/newcommand-vs-declaremathoperator">https://tex.stackexchange.com/questions/67506/newcommand-vs-declaremathoperator</a> for more information.</p>
+<p>Recall that the curly brakets { and } are used for grouping. An example is \frac function. It takes two arguments (inputs) that is \frac AB produces <span class="math notranslate nohighlight">\(\frac AB\)</span>.
+Sometimes expressions such as A or B is more than one character.
+We use { expression } to group.
+To express <span class="math notranslate nohighlight">\(\frac{40}{50}\)</span>, we use \frac{40}{50}.</p>
+<hr class="docutils" />
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">MATH 6000 Communicating Matheamtics</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="8-22-2022.html">Aug 22, 2022</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Aug 29, 2022</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#more-on-latex">More on LaTeX</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="9-19-2022.html">Sep 19, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-26-2022.html">Sep 26, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-03-2022.html">Oct 3rd, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-10-2022.html">Oct 10th, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-17-2022.html">Oct 17th, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-24-2022.html">Oct 24th, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-31-2022.html">Oct 31th, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-14-2022.html">Nov 14th, 2022</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="8-22-2022.html" title="previous chapter">Aug 22, 2022</a></li>
+      <li>Next: <a href="9-19-2022.html" title="next chapter">Sep 19, 2022</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022-2023, Youngsu Kim.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/8-29-2022.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

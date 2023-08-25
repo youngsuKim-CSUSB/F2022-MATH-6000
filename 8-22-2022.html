@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Aug 22, 2022 &#8212; MATH 6000 Communicating Matheamtics v1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Aug 29, 2022" href="8-29-2022.html" />
+    <link rel="prev" title="Welcome to F2022 Math 6000 Communicating Mathematics’s documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="aug-22-2022">
+<h1>Aug 22, 2022<a class="headerlink" href="#aug-22-2022" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction-to-latex">
+<h2>Introduction to LaTeX<a class="headerlink" href="#introduction-to-latex" title="Permalink to this headline">¶</a></h2>
+<p>Resources/References:</p>
+<ul class="simple">
+<li><p>Overleaf <a class="reference external" href="https://www.overleaf.com/read/pnjfsjgwjnyv">file</a> used in the lecture</p></li>
+<li><p><a class="reference external" href="https://tobi.oetiker.ch/lshort/lshort.pdf">The Not So Short Introduction to LATEX</a></p></li>
+<li><p><a class="reference external" href="https://www.overleaf.com/learn/latex/Mathematical_expressions">OverLeaf Mathematical Expressions</a></p></li>
+</ul>
+</div>
+<div class="section" id="paragraphs-in-latex">
+<h2>Paragraphs in LaTeX<a class="headerlink" href="#paragraphs-in-latex" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>To start a new paragraph at least one vertical line spacing is necessary.</p></li>
+</ul>
+<div class="highlight-latex notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span>random words.
+
+New paragraph
+</pre></div>
+</td></tr></table></div>
+<ul class="simple">
+<li><p>Use ‘’%’’ to comment out your code.</p></li>
+</ul>
+<div class="highlight-latex notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span>To comment out, use <span class="c">% symbol.</span>
+
+Example. This will be seen when complied <span class="c">% but this won&#39;t be</span>
+</pre></div>
+</td></tr></table></div>
+<ul class="simple">
+<li><p>Single line spacing does <em>not</em> start a new paragraph.</p></li>
+</ul>
+<div class="highlight-latex notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span>student1
+student2
+student3
+student4
+student5
+</pre></div>
+</td></tr></table></div>
+<p>produces</p>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>student1 student2 student3 student4 student5
+</pre></div>
+</div>
+</div></blockquote>
+<p>There are two ways to make a new line.</p>
+<ul class="simple">
+<li><p>We put the new line command  ‘’\’’.</p></li>
+</ul>
+<div class="highlight-latex notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span>student1<span class="k">\\</span>
+student2<span class="k">\\</span>
+student3<span class="k">\\</span>
+student4<span class="k">\\</span>
+student5 <span class="c">% One does not need a new line here.</span>
+</pre></div>
+</td></tr></table></div>
+<ul class="simple">
+<li><p>We use the <em>itemize</em> environment.</p></li>
+</ul>
+<div class="highlight-latex notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span> <span class="c">% or enumerate</span>
+<span class="k">\item</span> student1
+<span class="k">\item</span> student2
+<span class="k">\item</span> student3
+<span class="k">\item</span> student4
+<span class="k">\item</span> student5
+<span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>It produces something similar to</p>
+<ul class="simple">
+<li><p>student1</p></li>
+<li><p>student2</p></li>
+<li><p>student3</p></li>
+<li><p>student4</p></li>
+<li><p>student5</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Unlike programming languages such as Python and YAML, in LaTeX code indentation does not do anything. It is mostly for the reader’s convenience.</p>
+</div>
+</div>
+<div class="section" id="math-in-latex">
+<h2>Math in LaTeX<a class="headerlink" href="#math-in-latex" title="Permalink to this headline">¶</a></h2>
+<p>In LaTeX, we need to specify math mode by using one of the following keywords.</p>
+<ol class="arabic simple">
+<li><p>Inline mode</p></li>
+</ol>
+<div class="highlight-latex notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="s">\(</span><span class="nb"> &lt;math expressions&gt; </span><span class="s">\)</span>
+<span class="k">\$</span> &lt;math expressions&gt; <span class="k">\$</span>
+</pre></div>
+</td></tr></table></div>
+<p>Mathematical expressions created in inline mode are considered as part of regular text. For instance, the quadratic formula in inline mode produces <span class="math notranslate nohighlight">\(\frac{-b \pm \sqrt{b^2-4ac}}{2a}\)</span>.</p>
+<ol class="arabic simple" start="2">
+<li><p>Math mode</p></li>
+</ol>
+<div class="highlight-latex notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="sb">\[</span><span class="nb"> &lt;math expressions&gt; </span><span class="s">\]</span>
+<span class="sb">$$</span><span class="nb"> &lt;math expressions&gt; </span><span class="s">$$</span>
+<span class="k">\begin</span><span class="nb">{</span>equation<span class="nb">}</span> &lt;math expressions&gt; <span class="k">\end</span><span class="nb">{</span>equation<span class="nb">}</span> # this provides a numbered environment.
+<span class="k">\begin</span><span class="nb">{</span>equation*<span class="nb">}</span> &lt;math expressions&gt; <span class="k">\end</span><span class="nb">{</span>equation*<span class="nb">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>LaTeX math mode produces math such that it is not considered to be part of regular text but mathematical expressions themselves.
+It creates vertical space and most of the time, mathematical expressions are center aligned.
+For example, the quadratic formula in inline mode produces</p>
+<div class="math notranslate nohighlight">
+\[\frac{-b \pm \sqrt{b^2-4ac}}{2a}.\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In general, when typing math in LaTeX keep in mind that different fonts mean different symbols. That is the following four are different characters</p>
+<div class="math notranslate nohighlight">
+\[\text{p}, p, \mathfrak{p}, \mathbf{p}\]</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">MATH 6000 Communicating Matheamtics</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Aug 22, 2022</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction-to-latex">Introduction to LaTeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#paragraphs-in-latex">Paragraphs in LaTeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#math-in-latex">Math in LaTeX</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="8-29-2022.html">Aug 29, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-19-2022.html">Sep 19, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-26-2022.html">Sep 26, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-03-2022.html">Oct 3rd, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-10-2022.html">Oct 10th, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-17-2022.html">Oct 17th, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-24-2022.html">Oct 24th, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-31-2022.html">Oct 31th, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-14-2022.html">Nov 14th, 2022</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to F2022 Math 6000 Communicating Mathematics’s documentation!</a></li>
+      <li>Next: <a href="8-29-2022.html" title="next chapter">Aug 29, 2022</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022-2023, Youngsu Kim.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/8-22-2022.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

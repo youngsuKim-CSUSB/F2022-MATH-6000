@@ -1,0 +1,130 @@
+==============
+Sep 26, 2022
+==============
+
+Things to do
+-------------
+
+- LaTeX ``array`` and ``tabular`` environments; we will cover the ``theorem`` and ``bibliography`` environments, and the ``includegraphicx`` command soon.
+
+- Guide to finding a good topic;
+  
+LaTeX array and tabular
+------------------------
+
+Both environments work simliarly and we will focus on ``array``. Keep in mind, ``array`` is for `math mode` and ``tabular`` for `text mode`. 
+
+First, let's review the ``matrix`` environments. 
+
+.. math:: 
+
+    \begin{bmatrix}
+    1&2 \\
+    3&5 \\
+    8&13 
+    \end{bmatrix} 
+    ~\text{or}~
+    \begin{pmatrix}
+    1&2 \\
+    3&5 \\
+    8&13 
+    \end{pmatrix}
+
+To create the matrices above, we can use the following code. 
+
+.. code-block::
+    :caption: Matrix Example
+
+    \begin{equation*} # or two dollar symbols
+    \begin{bmatrix}
+    1 & 2 \\
+    3 & 5 \\
+    8 & 13 
+    \end{bmatrix} 
+    ~\text{or}~
+    \begin{pmatrix}
+    1 & 2 \\
+    3 & 5 \\
+    8 & 13 
+    \end{pmatrix}
+    \end{equation*} # or two dollar symbols
+
+Here, \& is a separator that separates columns. We use it for the ``align`` environments, too. 
+
+.. note:: space in math mode
+
+    ``\begin{bmatrix}1&2\\3&5\\8&13\end{bmatrix}`` produces the same matrix, but it is much harder to read. 
+
+See https://www.overleaf.com/learn/latex/Matrices for the complete list of ``matrix`` options. 
+
+Another approch is to use the ``array`` environment and delimiters. It is more felxible than the matrix environment. Here is an array way to create a matrix. 
+
+.. code-block::
+    :caption: Matrix Example by Array (Imcomplete)
+
+    \begin{equation*} 
+    \begin{array}{cc} # the {cc} after {array} denotes the number of columns and the alignment.
+    1 & 2 \\
+    3 & 5 \\
+    8 & 13 
+    \end{array} 
+    \end{equation*}
+
+Note that this code creates a matrix without parenthesis. 
+The regular ``(`` and ``)`` do not provide suitble size paranthesis. 
+We use the left or right delimiters with ``\left`` and ``\right`` command. 
+
+.. code-block::
+    :caption: Matrix Example by Array 
+
+    \begin{equation*} 
+    \left(              # One can use [, { and more
+    \begin{array}{cc} 
+    1 & 2 \\
+    3 & 5 \\
+    8 & 13 
+    \end{array} 
+    \right)             # One can use ], } and more
+    \end{equation*}
+
+The left and right combination need to be matched (I might be wrong though). If you want one of them use ``\right\.`` to ignore the right one. 
+
+Lastly, we can decorate arrays with lines. For vertical lines, use :math:`\mid` such as ``{c|c}``. For horizontal lines, use ``\hline``. These commands can be stacked. 
+
+.. code-block::
+    :caption: Array with lines 
+
+    \begin{equation*} 
+    \begin{array}{c|c|c} 
+    ~ &  \pi/2 & \pi \\
+    \hline 
+    \sin & 1 & 0 \\
+    \hline
+    \cos & 0 & -1 
+    \end{array} 
+    \end{equation*}
+
+This code gives the following. 
+
+
+.. math::
+
+    \begin{array}{c|c|c} 
+    ~ &  \pi/2 & \pi \\
+    \hline
+    \sin & 1 & 0 \\
+    \hline
+    \cos & 0 & -1 
+    \end{array} 
+
+----
+
+Final Project Topics
+~~~~~~~~~~~~~~~~~~~~~
+
+We worked on chooing the final project topics. For those, who have chosen on, start working on gather background and preliminary resources. 
+
+
+
+
+.. class ends here

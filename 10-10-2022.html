@@ -1,0 +1,284 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Oct 10th, 2022 &#8212; MATH 6000 Communicating Matheamtics v1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Oct 17th, 2022" href="10-17-2022.html" />
+    <link rel="prev" title="Oct 3rd, 2022" href="10-03-2022.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="oct-10th-2022">
+<h1>Oct 10th, 2022<a class="headerlink" href="#oct-10th-2022" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="review">
+<h2>Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">array</span></code> environment: align, hline, left, right</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">theorem</span></code> environment: named theorem</p></li>
+</ul>
+</div>
+<div class="section" id="things-to-do">
+<h2>Things to do<a class="headerlink" href="#things-to-do" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">bibliography</span></code>; minimal</p>
+<ul>
+<li><p>Overleaf document <a class="reference external" href="https://www.overleaf.com/learn/latex/Bibtex_bibliography_styles">https://www.overleaf.com/learn/latex/Bibtex_bibliography_styles</a></p></li>
+<li><p>MathSciNet <a class="reference external" href="https://mathscinet.ams.org/mathscinet/">https://mathscinet.ams.org/mathscinet/</a> use <code class="docutils literal notranslate"><span class="pre">Select</span> <span class="pre">Alternative</span> <span class="pre">Format</span></code> then <code class="docutils literal notranslate"><span class="pre">BibTex</span></code></p></li>
+<li><p>arXiv <a class="reference external" href="https://arxiv.org/help/hypertex/bibstyles">https://arxiv.org/help/hypertex/bibstyles</a> use <code class="docutils literal notranslate"><span class="pre">Export</span> <span class="pre">Bibtex</span> <span class="pre">Citation</span></code></p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">bibtex</span></code> package provides additional features, but it is different from <code class="docutils literal notranslate"><span class="pre">bibtex</span></code>, <a class="reference external" href="https://www.overleaf.com/learn/latex/Bibliography_management_with_biblatex">https://www.overleaf.com/learn/latex/Bibliography_management_with_biblatex</a></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">includegraphicx</span></code> <a class="reference external" href="https://www.overleaf.com/learn/latex/Inserting_Images">https://www.overleaf.com/learn/latex/Inserting_Images</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">itemize</span></code> environments; <code class="docutils literal notranslate"><span class="pre">enumitem</span></code> package <a class="reference external" href="https://ctan.org/pkg/enumitem?lang=en">https://ctan.org/pkg/enumitem?lang=en</a></p></li>
+</ul>
+</div>
+<div class="section" id="referencing-in-latex">
+<h2>Referencing in LaTeX<a class="headerlink" href="#referencing-in-latex" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="cross-referencing">
+<h3>Cross Referencing<a class="headerlink" href="#cross-referencing" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Overleaf <a class="reference external" href="https://www.overleaf.com/learn/latex/Cross_referencing_sections%2C_equations_and_floats">https://www.overleaf.com/learn/latex/Cross_referencing_sections%2C_equations_and_floats</a></p></li>
+<li><p>Chapters, sections, subsections, theorems, equations, etc</p></li>
+</ul>
+<p>To cross-reference in LaTeX, we use <code class="docutils literal notranslate"><span class="pre">\label{&lt;name&gt;}</span></code> to create an anchor point and <code class="docutils literal notranslate"><span class="pre">\ref{&lt;label</span> <span class="pre">name&gt;}</span></code> to point to that anchor.
+Here is an example of referring to a section.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">label, ref commands example</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\section</span><span class="nb">{</span>Good section to be referred<span class="nb">}</span> <span class="k">\label</span><span class="nb">{</span>goodSection<span class="nb">}</span>
+...
+...
+...
+In Section~<span class="k">\ref</span><span class="nb">{</span>goodSection<span class="nb">}</span> ...
+</pre></div>
+</div>
+</div>
+<p>It will produce <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">Section</span> <span class="pre">N</span> <span class="pre">...</span></code>, where N is the corresponding section number for <code class="docutils literal notranslate"><span class="pre">Good</span> <span class="pre">section</span> <span class="pre">to</span> <span class="pre">be</span> <span class="pre">referred</span></code>.
+Similarly, we can refer to equations. Recall generally we do not put an equation number, but to refer an equation <cite>properly</cite>, one needs to use <code class="docutils literal notranslate"><span class="pre">\begin{equation}</span></code> and <code class="docutils literal notranslate"><span class="pre">\end{equation}</span></code> (or the <code class="docutils literal notranslate"><span class="pre">\align</span></code> environment).</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">equation theorem label example</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>equation<span class="nb">}</span> <span class="k">\label</span><span class="nb">{</span>importantFormula<span class="nb">}</span>
+F = ma
+<span class="k">\end</span><span class="nb">{</span>equation<span class="nb">}</span>
+...
+...
+By eq.~<span class="k">\ref</span><span class="nb">{</span>importantFormula<span class="nb">}</span>, we are done.
+</pre></div>
+</div>
+</div>
+<p>Here one sees a drawback that <code class="docutils literal notranslate"><span class="pre">\label</span></code> and <code class="docutils literal notranslate"><span class="pre">\ref</span></code> commands only return a number not the name of the environment.
+This can be solved with the package <code class="docutils literal notranslate"><span class="pre">cleveref</span></code> <a class="reference external" href="https://ctan.org/pkg/cleveref?lang=en">https://ctan.org/pkg/cleveref?lang=en</a>.
+With this package, one can use <code class="docutils literal notranslate"><span class="pre">\Cref</span></code> and <code class="docutils literal notranslate"><span class="pre">\cref</span></code> in place of <code class="docutils literal notranslate"><span class="pre">\ref</span></code>. The former makes the first letter in uppercase and the latter makes it in lowercase, respectively.</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">cref label example</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span># in preamble
+<span class="k">\usepackage</span><span class="nb">{</span>cleveref<span class="nb">}</span>
+...
+...
+# in body
+<span class="k">\section</span><span class="nb">{</span>Good section to be referred<span class="nb">}</span> <span class="k">\label</span><span class="nb">{</span>goodSection<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>equation<span class="nb">}</span> <span class="k">\label</span><span class="nb">{</span>importantFormula<span class="nb">}</span>
+F = ma
+<span class="k">\end</span><span class="nb">{</span>equation<span class="nb">}</span>
+...
+...
+Now, the following two lines produce the same outcome. <span class="k">\\</span>
+
+By eq.~(<span class="k">\ref</span><span class="nb">{</span>importantFormula<span class="nb">}</span>) in Section~<span class="k">\ref</span><span class="nb">{</span>goodSection<span class="nb">}</span>, we are done. <span class="k">\\</span>
+By <span class="k">\cref</span><span class="nb">{</span>importantFormula<span class="nb">}</span> in <span class="k">\Cref</span><span class="nb">{</span>goodSection<span class="nb">}</span>, we are done.
+</pre></div>
+</div>
+</div>
+<p>Of course, this package shines most when used with theorems.</p>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">theorems cref</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>theorem<span class="nb">}</span>[<span class="nb">{</span>My Statement<span class="nb">}</span>] <span class="k">\label</span><span class="nb">{</span>myThm<span class="nb">}</span>
+Great!
+<span class="k">\end</span><span class="nb">{</span>theorem<span class="nb">}</span>
+
+<span class="k">\Cref</span><span class="nb">{</span>myThm<span class="nb">}</span> # This will print Theorem N.
+
+<span class="k">\begin</span><span class="nb">{</span>proposition<span class="nb">}</span>[<span class="nb">{</span>My Statement<span class="nb">}</span>] <span class="k">\label</span><span class="nb">{</span>myProp<span class="nb">}</span>
+Great!
+<span class="k">\end</span><span class="nb">{</span>propotision<span class="nb">}</span>
+
+<span class="k">\Cref</span><span class="nb">{</span>myProp<span class="nb">}</span> # This will print Proposition N+1.
+</pre></div>
+</div>
+</div>
+<p>When one switches <code class="docutils literal notranslate"><span class="pre">theorem</span></code> and <code class="docutils literal notranslate"><span class="pre">proposition</span></code>, <code class="docutils literal notranslate"><span class="pre">\Cref</span></code> takes care of the changes.</p>
+<p>We cannot use <code class="docutils literal notranslate"><span class="pre">\label</span></code> to cite papers as <code class="docutils literal notranslate"><span class="pre">\label</span></code> can be only put with the existing text.
+To this end, we use LaTeX bibliography tools.</p>
+</div>
+<div class="section" id="bibliography-referencing">
+<h3>Bibliography Referencing<a class="headerlink" href="#bibliography-referencing" title="Permalink to this headline">¶</a></h3>
+<p>We will learn the following.</p>
+<ul class="simple">
+<li><p>How to create a bib file; this is the file that contains the bibliography data.</p></li>
+<li><p>How to load the bib file in LaTeX</p></li>
+<li><p>This is one way and somewhat minimal; for instance, <a class="reference external" href="https://www.overleaf.com/learn/latex/Bibliography_management_with_bibtex">https://www.overleaf.com/learn/latex/Bibliography_management_with_bibtex</a> provides more powerful tools.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The goal is to do the least to maintain your bib file.
+That means we will minimize typing entries manually.
+To do this, we need to use the appropriate search tools.</p>
+</div>
+<p>When it is done, we can simply use the <code class="docutils literal notranslate"><span class="pre">\cite</span></code> command, which is similar to <code class="docutils literal notranslate"><span class="pre">\ref</span></code>.</p>
+<p>Suppose we have the following in our sample.bib file.</p>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">sample bib file</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span>@article <span class="nb">{</span>wiles95,    <span class="c">% &lt;- this is the name we need to use in \cite{&lt;name&gt;} %%%% Warning you need to delete this commment in the bib file %%%%%</span>
+  AUTHOR = <span class="nb">{</span>Wiles, Andrew<span class="nb">}</span>,
+  TITLE = <span class="nb">{</span>Modular elliptic curves and <span class="nb">{</span>F<span class="nb">}</span>ermat&#39;s last theorem<span class="nb">}</span>,
+  JOURNAL = <span class="nb">{</span>Ann. of Math. (2)<span class="nb">}</span>,
+  FJOURNAL = <span class="nb">{</span>Annals of Mathematics. Second Series<span class="nb">}</span>,
+  VOLUME = <span class="nb">{</span>141<span class="nb">}</span>,
+  YEAR = <span class="nb">{</span>1995<span class="nb">}</span>,
+  NUMBER = <span class="nb">{</span>3<span class="nb">}</span>,
+  PAGES = <span class="nb">{</span>443--551<span class="nb">}</span>,
+  ISSN = <span class="nb">{</span>0003-486X<span class="nb">}</span>,
+  MRCLASS = <span class="nb">{</span>11G05 (11D41 11F11 11F80 11G18)<span class="nb">}</span>,
+  MRNUMBER = <span class="nb">{</span>1333035<span class="nb">}</span>,
+  MRREVIEWER = <span class="nb">{</span>Karl Rubin<span class="nb">}</span>,
+  DOI = <span class="nb">{</span>10.2307/2118559<span class="nb">}</span>,
+  URL = <span class="nb">{</span>https://doi.org/10.2307/2118559<span class="nb">}</span>,
+<span class="nb">}</span>
+</pre></div>
+</div>
+</div>
+<p>Then in our main tex file, we add the following two lines. Then we are ready to refer to this article by calling <code class="docutils literal notranslate"><span class="pre">\cite{wiles95}</span></code>.</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span>...
+... # at the end of the file
+
+<span class="k">\bibliographystyle</span><span class="nb">{</span>alpha<span class="nb">}</span> <span class="c">% this provides the style of reference displayed</span>
+<span class="k">\bibliography</span><span class="nb">{</span>sample<span class="nb">}</span> <span class="c">% we declare that we use sample.bib for our bib file.</span>
+</pre></div>
+</div>
+<p>Also, in the tex file, one needs to add the following two lines, often at the end of the tex file.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Later, I will add how to search on <cite>MathSciNet</cite> and <cite>arXiv</cite>.</p>
+</div>
+<p>Lastly, if you want <code class="docutils literal notranslate"><span class="pre">References</span></code> to be included in your table of contents (use <code class="docutils literal notranslate"><span class="pre">\tableofcontents</span></code> to create one), add the following in your preamble.</p>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">References in Table of contents</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="c">%%%% In preamble</span>
+<span class="k">\usepackage</span><span class="na">[nottoc]</span><span class="nb">{</span>tocbibind<span class="nb">}</span>
+</pre></div>
+</div>
+</div>
+<p>Check out our thesis template bibliography section, <a class="reference external" href="https://www.overleaf.com/read/prmnfsqfxmzr">https://www.overleaf.com/read/prmnfsqfxmzr</a>.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">MATH 6000 Communicating Matheamtics</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="8-22-2022.html">Aug 22, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8-29-2022.html">Aug 29, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-19-2022.html">Sep 19, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-26-2022.html">Sep 26, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-03-2022.html">Oct 3rd, 2022</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Oct 10th, 2022</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#review">Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#things-to-do">Things to do</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#referencing-in-latex">Referencing in LaTeX</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="10-17-2022.html">Oct 17th, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-24-2022.html">Oct 24th, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-31-2022.html">Oct 31th, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-14-2022.html">Nov 14th, 2022</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="10-03-2022.html" title="previous chapter">Oct 3rd, 2022</a></li>
+      <li>Next: <a href="10-17-2022.html" title="next chapter">Oct 17th, 2022</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022-2023, Youngsu Kim.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/10-10-2022.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

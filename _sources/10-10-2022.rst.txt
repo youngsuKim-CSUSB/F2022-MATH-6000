@@ -1,0 +1,179 @@
+==============
+Oct 10th, 2022
+==============
+
+.. Prep for the course
+.. ~~~~~~~~~~~~~~~~~~~
+
+Review
+------
+
+* ``array`` environment: align, hline, left, right
+* ``theorem`` environment: named theorem
+
+Things to do
+-------------
+
+- ``bibliography``; minimal
+  
+  - Overleaf document https://www.overleaf.com/learn/latex/Bibtex_bibliography_styles
+  - MathSciNet https://mathscinet.ams.org/mathscinet/ use ``Select Alternative Format`` then ``BibTex``
+  - arXiv https://arxiv.org/help/hypertex/bibstyles use ``Export Bibtex Citation``
+  - the ``bibtex`` package provides additional features, but it is different from ``bibtex``, https://www.overleaf.com/learn/latex/Bibliography_management_with_biblatex
+
+- ``includegraphicx`` https://www.overleaf.com/learn/latex/Inserting_Images
+- ``itemize`` environments; ``enumitem`` package https://ctan.org/pkg/enumitem?lang=en 
+
+Referencing in LaTeX 
+--------------------
+
+Cross Referencing
+~~~~~~~~~~~~~~~~~~
+
+- Overleaf https://www.overleaf.com/learn/latex/Cross_referencing_sections%2C_equations_and_floats
+
+- Chapters, sections, subsections, theorems, equations, etc
+
+To cross-reference in LaTeX, we use ``\label{<name>}`` to create an anchor point and ``\ref{<label name>}`` to point to that anchor. 
+Here is an example of referring to a section. 
+
+.. code-block:: latex
+    :caption: label, ref commands example
+
+    \section{Good section to be referred} \label{goodSection}
+    ...
+    ...
+    ...
+    In Section~\ref{goodSection} ...
+
+It will produce ``In Section N ...``, where N is the corresponding section number for ``Good section to be referred``. 
+Similarly, we can refer to equations. Recall generally we do not put an equation number, but to refer an equation `properly`, one needs to use ``\begin{equation}`` and ``\end{equation}`` (or the ``\align`` environment). 
+
+.. code-block:: latex
+    :caption: equation theorem label example
+
+    \begin{equation} \label{importantFormula}
+    F = ma
+    \end{equation}
+    ...
+    ...
+    By eq.~\ref{importantFormula}, we are done.
+
+Here one sees a drawback that ``\label`` and ``\ref`` commands only return a number not the name of the environment. 
+This can be solved with the package ``cleveref`` https://ctan.org/pkg/cleveref?lang=en. 
+With this package, one can use ``\Cref`` and ``\cref`` in place of ``\ref``. The former makes the first letter in uppercase and the latter makes it in lowercase, respectively. 
+
+
+.. code-block:: latex
+    :caption: cref label example
+
+    # in preamble
+    \usepackage{cleveref}
+    ...
+    ...
+    # in body
+    \section{Good section to be referred} \label{goodSection}
+
+    \begin{equation} \label{importantFormula}
+    F = ma
+    \end{equation}
+    ...
+    ...
+    Now, the following two lines produce the same outcome. \\
+    
+    By eq.~(\ref{importantFormula}) in Section~\ref{goodSection}, we are done. \\
+    By \cref{importantFormula} in \Cref{goodSection}, we are done.
+
+Of course, this package shines most when used with theorems. 
+
+.. code-block:: latex
+    :caption: theorems cref
+
+    \begin{theorem}[{My Statement}] \label{myThm}
+    Great!
+    \end{theorem}
+
+    \Cref{myThm} # This will print Theorem N. 
+
+    \begin{proposition}[{My Statement}] \label{myProp}
+    Great!
+    \end{propotision}
+
+    \Cref{myProp} # This will print Proposition N+1. 
+
+When one switches ``theorem`` and ``proposition``, ``\Cref`` takes care of the changes.
+
+We cannot use ``\label`` to cite papers as ``\label`` can be only put with the existing text. 
+To this end, we use LaTeX bibliography tools. 
+
+Bibliography Referencing
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+We will learn the following.
+
+- How to create a bib file; this is the file that contains the bibliography data. 
+- How to load the bib file in LaTeX
+- This is one way and somewhat minimal; for instance, https://www.overleaf.com/learn/latex/Bibliography_management_with_bibtex provides more powerful tools. 
+
+.. note:: 
+
+    The goal is to do the least to maintain your bib file. 
+    That means we will minimize typing entries manually. 
+    To do this, we need to use the appropriate search tools.  
+
+When it is done, we can simply use the ``\cite`` command, which is similar to ``\ref``. 
+
+Suppose we have the following in our sample.bib file. 
+
+.. code-block:: latex
+    :caption: sample bib file
+
+    @article {wiles95,    % <- this is the name we need to use in \cite{<name>} %%%% Warning you need to delete this commment in the bib file %%%%%
+      AUTHOR = {Wiles, Andrew},
+      TITLE = {Modular elliptic curves and {F}ermat's last theorem},
+      JOURNAL = {Ann. of Math. (2)},
+      FJOURNAL = {Annals of Mathematics. Second Series},
+      VOLUME = {141},
+      YEAR = {1995},
+      NUMBER = {3},
+      PAGES = {443--551},
+      ISSN = {0003-486X},
+      MRCLASS = {11G05 (11D41 11F11 11F80 11G18)},
+      MRNUMBER = {1333035},
+      MRREVIEWER = {Karl Rubin},
+      DOI = {10.2307/2118559},
+      URL = {https://doi.org/10.2307/2118559},
+    }
+
+Then in our main tex file, we add the following two lines. Then we are ready to refer to this article by calling ``\cite{wiles95}``.
+
+
+.. code-block:: latex
+
+    ...
+    ... # at the end of the file
+
+    \bibliographystyle{alpha} % this provides the style of reference displayed
+    \bibliography{sample} % we declare that we use sample.bib for our bib file.  
+
+Also, in the tex file, one needs to add the following two lines, often at the end of the tex file. 
+
+.. note:: 
+    
+    Later, I will add how to search on `MathSciNet` and `arXiv`. 
+
+
+Lastly, if you want ``References`` to be included in your table of contents (use ``\tableofcontents`` to create one), add the following in your preamble.
+
+.. code-block:: latex
+    :caption: References in Table of contents
+
+    %%%% In preamble
+    \usepackage[nottoc]{tocbibind}
+
+Check out our thesis template bibliography section, https://www.overleaf.com/read/prmnfsqfxmzr. 
+
+
+
+
+.. class ends here

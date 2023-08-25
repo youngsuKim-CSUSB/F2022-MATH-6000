@@ -1,0 +1,264 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Oct 17th, 2022 &#8212; MATH 6000 Communicating Matheamtics v1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Oct 24th, 2022" href="10-24-2022.html" />
+    <link rel="prev" title="Oct 10th, 2022" href="10-10-2022.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="oct-17th-2022">
+<h1>Oct 17th, 2022<a class="headerlink" href="#oct-17th-2022" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="review">
+<h2>Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">array</span></code> environment: align, hline, left &amp; right</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">theorem</span></code> environment: named theorem</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bibliography</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="things-to-do">
+<h2>Things to do<a class="headerlink" href="#things-to-do" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">includegraphics</span></code> <a class="reference external" href="https://www.overleaf.com/learn/latex/Inserting_Images">https://www.overleaf.com/learn/latex/Inserting_Images</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">itemize</span></code> environments; <code class="docutils literal notranslate"><span class="pre">enumitem</span></code> package <a class="reference external" href="https://ctan.org/pkg/enumitem?lang=en">https://ctan.org/pkg/enumitem?lang=en</a></p></li>
+</ul>
+<p>These notes are heavily based on the Overleaf page listed above.</p>
+</div>
+<div class="section" id="images-in-latex">
+<h2>Images in LaTeX<a class="headerlink" href="#images-in-latex" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="how-to-include-images">
+<h3>How to include images<a class="headerlink" href="#how-to-include-images" title="Permalink to this headline">¶</a></h3>
+<p>To include images in LaTeX, we need to prepare them in certain formats.
+Well-known formats such as PNG, JPEG, PDF are supported and work well.
+The package we need is <code class="docutils literal notranslate"><span class="pre">graphicx</span></code>, and the command we use is <code class="docutils literal notranslate"><span class="pre">\includegraphics[&lt;options&gt;]{filename}</span></code>.
+Assume that we have an image <code class="docutils literal notranslate"><span class="pre">graph1.PNG</span></code>, the following code will include the image in the LaTeX output.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">include images</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="c">% in preamble</span>
+<span class="k">\usepackage</span><span class="nb">{</span>graphicx<span class="nb">}</span>
+
+<span class="c">% in body</span>
+<span class="k">\includegraphics</span><span class="nb">{</span>graph1<span class="nb">}</span> <span class="c">% or</span>
+<span class="k">\includegraphics</span><span class="nb">{</span>&quot;graph1.PNG&quot;<span class="nb">}</span> <span class="c">% or</span>
+</pre></div>
+</div>
+</div>
+<p>You would notice that sometimes, the image size can be too big or small.
+If it is small and in PNG format, you’d need to find the original source.
+For big images, we can scale them down with options. Here are some examples.</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">image size</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\includegraphics</span><span class="na">[scale=0.5]</span><span class="nb">{</span>graph1<span class="nb">}</span> <span class="c">% half size</span>
+<span class="k">\includegraphics</span><span class="na">[width=5in]</span><span class="nb">{</span>graph1<span class="nb">}</span> <span class="c">% width 5 in</span>
+<span class="k">\includegraphics</span><span class="na">[width=\textwidth]</span><span class="nb">{</span>graph1<span class="nb">}</span> <span class="c">% match textwidth</span>
+<span class="k">\includegraphics</span><span class="na">[width=0.5\textwidth]</span><span class="nb">{</span>graph1<span class="nb">}</span> <span class="c">% half of textwidth</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="how-to-position-images">
+<h3>How to position images<a class="headerlink" href="#how-to-position-images" title="Permalink to this headline">¶</a></h3>
+<p>Without additional settings, these images are left-aligned, just like text blocks.
+Sometimes, we want to have more control about their positions.
+One way is to use the <code class="docutils literal notranslate"><span class="pre">figure</span></code> invironment.
+This is also useful when you need to refer to the image later, i.e., <code class="docutils literal notranslate"><span class="pre">\ref{}</span></code> to the images.</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">figure</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>
+<span class="k">\includegraphics</span><span class="na">[width=0.5\textwidth]</span><span class="nb">{</span>graph1<span class="nb">}</span> <span class="c">% the half of the textwidth</span>
+<span class="k">\centering</span>        <span class="c">% I forgot to include this in class.</span>
+<span class="k">\caption</span><span class="nb">{</span>Graph caption<span class="nb">}</span>
+<span class="k">\label</span><span class="nb">{</span>firstGraph<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+</pre></div>
+</div>
+</div>
+<p>The command <code class="docutils literal notranslate"><span class="pre">\centering</span></code> makes the image center aligned, and <code class="docutils literal notranslate"><span class="pre">\caption{}</span></code> creates a caption (it can be placed before <code class="docutils literal notranslate"><span class="pre">\includegraphics</span></code> to have top captions).
+Lastly, <code class="docutils literal notranslate"><span class="pre">\label</span></code> works the same way as in theorems, equations and etc; <code class="docutils literal notranslate"><span class="pre">\label</span></code> seems to require <code class="docutils literal notranslate"><span class="pre">\caption{&lt;name&gt;}</span></code> defined.</p>
+</div>
+<div class="section" id="more-on-positioning-images">
+<h3>More on positioning images<a class="headerlink" href="#more-on-positioning-images" title="Permalink to this headline">¶</a></h3>
+<p>When including images, LaTeX decides where to place them. We may override this sometimes. The figure environment accepts position options.</p>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">figure</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[t] <span class="c">% you may use, b,t,h and ! as well. They stand for ``bottom, top, here, and force``, respectively.</span>
+<span class="k">\includegraphics</span><span class="na">[width=0.5\textwidth]</span><span class="nb">{</span>graph1<span class="nb">}</span> <span class="c">% the half of the textwidth</span>
+<span class="k">\centering</span>
+<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="wrapfigure-package">
+<h3>Wrapfigure package<a class="headerlink" href="#wrapfigure-package" title="Permalink to this headline">¶</a></h3>
+<p>When you have a small figure and want to position it next to your text, try the <code class="docutils literal notranslate"><span class="pre">wrapfigure</span></code> package, <a class="reference external" href="https://www.overleaf.com/learn/latex/Wrapping_text_around_figures">https://www.overleaf.com/learn/latex/Wrapping_text_around_figures</a>.</p>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">wrapfig package</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="c">%%%% in preamble</span>
+<span class="k">\usepackage</span><span class="nb">{</span>wrapfig<span class="nb">}</span>
+
+<span class="c">%%%% in body</span>
+<span class="k">\begin</span><span class="nb">{</span>wrapfigure<span class="nb">}</span>[lineheight]<span class="nb">{</span>position<span class="nb">}{</span>width<span class="nb">}</span>
+<span class="k">\includegraphics</span><span class="nb">{</span>graph1<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>wrapfigure<span class="nb">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="image-folder">
+<h3>Image folder<a class="headerlink" href="#image-folder" title="Permalink to this headline">¶</a></h3>
+<p>When there are several images, it is better to organize them as a folder. We do not need to include the prefix with the option <code class="docutils literal notranslate"><span class="pre">\graphicspath{&lt;relative</span> <span class="pre">path&gt;}</span></code> in your preamble.</p>
+</div>
+</div>
+<div class="section" id="enumitem-package">
+<h2>Enumitem package<a class="headerlink" href="#enumitem-package" title="Permalink to this headline">¶</a></h2>
+<p>Today, we won’t have enough time to cover the <code class="docutils literal notranslate"><span class="pre">enumitem</span></code> package.
+Instead, we use the <code class="docutils literal notranslate"><span class="pre">shortlabels</span></code> option so that <code class="docutils literal notranslate"><span class="pre">enumitem</span></code> works similarily to the <code class="docutils literal notranslate"><span class="pre">enumerate</span></code> package.</p>
+<p>Recall to create an ordered list, we use <code class="docutils literal notranslate"><span class="pre">\begin{enumerate}</span></code> and <code class="docutils literal notranslate"><span class="pre">\end{enumerate}</span></code>.</p>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">enumerate</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="c">%%%% body</span>
+<span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+<span class="k">\item</span> a
+<span class="k">\item</span> b
+<span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+</pre></div>
+</div>
+</div>
+<p>This will create an ordered list and the LaTeX class defines its label.
+There are many ways to customize the label (one can do this without using additional packages).
+A quick and convenient way to do this is to use the <code class="docutils literal notranslate"><span class="pre">enumerate</span></code> package or the <code class="docutils literal notranslate"><span class="pre">enumitem</span></code> package with the option <code class="docutils literal notranslate"><span class="pre">shortlabels</span></code>.</p>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">enumerate/enumitem pacakge</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="c">%%%% preamble</span>
+<span class="k">\usepackage</span><span class="na">[shortlabels]</span><span class="nb">{</span>enumitem<span class="nb">}</span>  <span class="c">% With this enumitem works in a similar way as enumurate</span>
+<span class="k">\usepackage</span><span class="nb">{</span>enumerate<span class="nb">}</span>              <span class="c">% This line is equivalent to the line above.</span>
+                                    <span class="c">% Since the enumerate package is no longer actively managed</span>
+                                    <span class="c">% we recommand the enumitem pacakge.</span>
+
+<span class="c">%%%% body</span>
+<span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>[(A)]  <span class="c">% [&lt;desired label&gt;]</span>
+<span class="k">\item</span> a
+<span class="k">\item</span> b
+<span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+</pre></div>
+</div>
+</div>
+<p>In the desired label, you may put many different labels such as <code class="docutils literal notranslate"><span class="pre">a,A,i,I</span></code> with or without parenthesis and with <code class="docutils literal notranslate"><span class="pre">.</span></code>.
+Partial prerenthesis works too, e.g., <code class="docutils literal notranslate"><span class="pre">\begin{enumerate}[i.)]</span></code> creates labels <code class="docutils literal notranslate"><span class="pre">i.)</span></code>, <code class="docutils literal notranslate"><span class="pre">ii.)</span></code>, and so on.
+That’s all for this week.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">MATH 6000 Communicating Matheamtics</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="8-22-2022.html">Aug 22, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8-29-2022.html">Aug 29, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-19-2022.html">Sep 19, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-26-2022.html">Sep 26, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-03-2022.html">Oct 3rd, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-10-2022.html">Oct 10th, 2022</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Oct 17th, 2022</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#review">Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#things-to-do">Things to do</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#images-in-latex">Images in LaTeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#enumitem-package">Enumitem package</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="10-24-2022.html">Oct 24th, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-31-2022.html">Oct 31th, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-14-2022.html">Nov 14th, 2022</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="10-10-2022.html" title="previous chapter">Oct 10th, 2022</a></li>
+      <li>Next: <a href="10-24-2022.html" title="next chapter">Oct 24th, 2022</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022-2023, Youngsu Kim.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/10-17-2022.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
