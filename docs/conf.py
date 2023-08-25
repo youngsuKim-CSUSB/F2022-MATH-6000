@@ -14,12 +14,12 @@ release = 'v1'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = []
-# extensions = [
-#     "sphinx_rtd_theme",
+# extensions = []
+extensions = [
+    "sphinx_rtd_theme",
 #     # "myst_parser",
 #     # "sphinx_math_dollar",
-# ]
+]
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'source/*.rst']
@@ -29,7 +29,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'source/*.rst']
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 # html_theme = 'alabaster'
-# html_theme = 'sphinx_rtd_theme'
+html_theme = 'sphinx_rtd_theme'
 # html_theme = 'sphinx_book_theme'
 
 html_static_path = ['_static']
